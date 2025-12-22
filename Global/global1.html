@@ -1,0 +1,145 @@
+<head>
+  <!--swiper-carousel-->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+  />
+  <!--end-swiper-carousel-->
+
+  <!--owl-carousel-->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+  />
+  <!--end-owl-carousel-->
+
+  <style>
+    /*header*/
+    @media (min-width: 992px) {
+      .header-menu:hover .submenu {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+      }
+      .header-menu .image-4 {
+        transition: transform 0.3s;
+      }
+      .header-menu:hover .image-4 {
+        transform: rotate(180deg);
+      }
+      .menu-container:hover p {
+        color: #ed441b;
+      }
+    }
+    /*end-header*/
+
+    /*hover-on-link-cta*/
+    .link-block:hover {
+      background-color: white;
+    }
+    .link-block:hover .cta-title {
+      color: #111111;
+    }
+    .link-block:hover .image-5 {
+      display: none;
+    }
+    .link-block:hover .image-21 {
+      display: block;
+    }
+    /*hover-on-link-cta*/
+
+    /*hover-on-link-cta2*/
+    .link-block-2:hover {
+      background-color: #111111;
+    }
+    .link-block-2:hover .cta2-title {
+      color: white;
+    }
+    .link-block-2:hover .image-11 {
+      display: none;
+    }
+    .link-block-2:hover .image-1 {
+      display: block;
+    }
+    /*hover-on-link-cta2*/
+
+    /*hover-on-link-cta5*/
+    .link-block-5:hover {
+      background-color: #e1dfe0;
+    }
+    .link-block-5:hover .cta2-title-2 {
+      color: black;
+    }
+    .link-block-5:hover .image-40 {
+      display: block;
+    }
+    .link-block-5:hover .image-41 {
+      display: none;
+    }
+    /*hover-on-link-cta2*/
+  </style>
+</head>
+<body>
+  <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+  ></script>
+
+  <!--swiper-carousel-->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <!--end-swiper-carousel-->
+
+  <!--owl-carousel-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!--end-owl-carousel-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+  <script>
+    /*header*/
+    const header = document.getElementById("header");
+
+    document.addEventListener("scroll", (e) => {
+      if (header) {
+        if (e?.target?.scrollingElement?.scrollTop >= 100) {
+          header.style.backgroundColor = "#111c";
+          header.style.backdropFilter = "blur(3px)";
+        } else {
+          header.style.backgroundColor = "transparent";
+          header.style.backdropFilter = "blur(0px)";
+        }
+      }
+    });
+    /*end-header*/
+
+    if (window.innerWidth <= 991) {
+      const headerMenu = document.querySelectorAll(".header-menu");
+      const submenus = document.querySelectorAll(".submenu");
+      headerMenu.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          const submenu = item.getElementsByClassName("submenu");
+
+          if (submenu?.length > 0) {
+            const computedStyle = window.getComputedStyle(submenu[0]);
+
+            if (computedStyle.visibility == "visible") {
+              submenu[0].style.visibility = "hidden";
+              submenu[0].style.display = "none";
+              submenu[0].style.opacity = 0;
+            } else {
+              submenu[0].style.visibility = "visible";
+              submenu[0].style.display = "block";
+              submenu[0].style.opacity = 1;
+            }
+          }
+        });
+      });
+    }
+  </script>
+</body>

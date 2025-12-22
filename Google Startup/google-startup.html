@@ -1,0 +1,104 @@
+<head>
+  <style>
+    /*swiper-carousel*/
+    .swiper-pagination {
+      position: static !important;
+      margin-top: 50px !important;
+      align-items: center;
+      justify-content: center;
+    }
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+    }
+    .swiper-navigation-icon {
+      display: none;
+    }
+    .swiper-pagination-bullet-active {
+      width: 10px;
+      height: 10px;
+      background-color: #111111;
+    }
+    /*end-swiper-carousel*/
+  </style>
+</head>
+<body>
+  <script>
+    //collaboration-carouse
+    const collaborationCarousel = new Swiper(".collaboration-carousel", {
+      direction: "horizontal",
+      slidesPerView: 3,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      loop: true,
+      speed: 800,
+      autoPlay: true,
+      breakpoints: {
+        300: {
+          slidesPerView: 1.3,
+          spaceBetween: 15,
+          loop: true,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+      },
+    });
+
+    //startups-carousel
+    const startupsCarousel = new Swiper(".startups-carousel", {
+      direction: "horizontal",
+      slidesPerView: 3,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      loop: true,
+      speed: 800,
+      autoPlay: true,
+      breakpoints: {
+        300: {
+          slidesPerView: 2.3,
+          spaceBetween: 15,
+          loop: true,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 24,
+        },
+      },
+    });
+
+    if (window.innerWidth <= 991) {
+      const headerMenu = document.querySelectorAll(".menu-container");
+      const mobileSideMenu = document.querySelectorAll(".mobilesidemenu");
+      const hamburgerIcon = document.querySelectorAll(".hamburger-icon");
+      const closeIcon = document.querySelectorAll(".close-icon");
+
+      headerMenu.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          mobileSideMenu[0].style.display = "none";
+          hamburgerIcon[0].style.display = "block";
+          closeIcon[0].style.display = "none";
+        });
+      });
+    }
+  </script>
+</body>

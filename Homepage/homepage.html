@@ -1,0 +1,446 @@
+<head>
+  <style>
+    /*swiper-carousel*/
+    .swiper-pagination {
+      position: static !important;
+      margin-top: 50px !important;
+      align-items: center;
+      justify-content: center;
+    }
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+    }
+    .swiper-navigation-icon {
+      display: none;
+    }
+    .swiper-pagination-bullet-active {
+      width: 10px;
+      height: 10px;
+      background-color: #111111;
+    }
+    /*end-swiper-carousel*/
+
+    /*videos-tab-section*/
+    .videos-section-tabs-container .w--current .image-22 {
+      display: none;
+    }
+    .videos-section-tabs-container .w--current .image-23 {
+      display: block;
+    }
+    /*end-videos-tab-section*/
+
+    /*owl-carousel*/
+    .owl-theme .owl-dots {
+      display: flex;
+      align-items: center;
+      margin-top: 18px !important;
+      justify-content: center;
+    }
+    .owl-theme .owl-dots .owl-dot span {
+      width: 8px;
+      height: 8px;
+    }
+    .owl-theme .owl-dots .owl-dot.active span {
+      background-color: black;
+      width: 10px;
+      height: 10px;
+    }
+    /*end-owl-carousel*/
+
+    @media (min-width: 768px) {
+      /*impact-carousel*/
+      .impact-carousel .owl-stage {
+        display: flex;
+        padding-top: 40px;
+      }
+      .impact-carousel .owl-item.center .div-block {
+        width: 290px !important;
+      }
+      .impact-carousel .owl-item.center {
+        position: relative;
+        margin-top: -36px;
+        width: 290px !important;
+      }
+      .impact-carousel .owl-item.center .div-block-8 {
+        height: 363px;
+      }
+
+      .impact-carousel .owl-item.center .person-infor {
+        display: flex;
+      }
+      .impact-carousel .owl-item.center .paragraph {
+        display: block;
+      }
+      /*end-impact-carousel*/
+    }
+    @media (max-width: 767px) {
+      /*impact-carousel*/
+      .impact-carousel .owl-item.active .person-infor {
+        display: flex;
+      }
+      .impact-carousel .owl-item.active .paragraph {
+        display: block;
+      }
+      /*end-impact-carousel*/
+    }
+  </style>
+</head>
+<body>
+  <script>
+    //impact carousel
+    $(document).ready(function () {
+      $(".impact-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        autoplay: false,
+        center: true,
+        dots: false,
+        responsive: {
+          0: { items: 1, center: false, dots: true },
+          768: { items: 3, center: true, dots: false },
+          1024: { items: 5 },
+        },
+      });
+    });
+
+    //stats-container
+    const statsSwiper = new Swiper(".stats-container", {
+      direction: "horizontal",
+      slidesPerView: 5,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      loop: true,
+      speed: 800,
+      breakpoints: {
+        // when window width is >= 320px
+        300: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+          loop: true,
+        },
+        // when window width is >= 480px
+        576: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        // when window width is >= 640px
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 15,
+          loop: true,
+        },
+      },
+    });
+
+    //startups-carousel
+    const startupsSwiper = new Swiper(".startups-container", {
+      // Optional parameters
+      direction: "horizontal",
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      loop: true,
+      speed: 800,
+      slidesPerView: 5,
+      breakpoints: {
+        // when window width is >= 320px
+        300: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+          loop: true,
+        },
+        // when window width is >= 640px
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 15,
+          loop: false,
+        },
+      },
+    });
+
+    //leaders-carousel
+    const leadersSwiper = new Swiper(".leaders-container", {
+      // Optional parameters
+      direction: "horizontal",
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      loop: true,
+      speed: 800,
+      slidesPerView: 5,
+      breakpoints: {
+        300: {
+          slidesPerView: 2.3,
+          spaceBetween: 12,
+          loop: true,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 24,
+          loop: false,
+        },
+      },
+    });
+
+    //creating-impact-carousel
+    const creatingImpactSwiper = new Swiper(".creating-impact-carousel", {
+      direction: "horizontal",
+      slidesPerView: 3,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      loop: true,
+      speed: 800,
+      autoPlay: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 1.3,
+          spaceBetween: 15,
+          loop: true,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 23,
+          loop: false,
+        },
+      },
+    });
+
+    //not-frameworks-carousel
+    const notFrameSwiper = new Swiper(".not-frameworks-carousel", {
+      direction: "horizontal",
+      slidesPerView: 4,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      loop: true,
+      speed: 800,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 1.3,
+          spaceBetween: 12,
+          loop: true,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 12,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 12,
+          loop: false,
+        },
+      },
+    });
+
+    //video-carousel
+    const videoSwiper = new Swiper(".video-carousel", {
+      direction: "horizontal",
+      slidesPerView: 4,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      loop: true,
+      speed: 800,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 1.3,
+          spaceBetween: 12,
+          loop: true,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 12,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 12,
+          loop: false,
+        },
+      },
+    });
+
+    //second-video-carousel
+    const secondVideoSwiper = new Swiper(".second-video-carousel", {
+      direction: "horizontal",
+      slidesPerView: 2,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      loop: true,
+      speed: 800,
+      breakpoints: {
+        300: {
+          slidesPerView: 1.3,
+          spaceBetween: 12,
+          loop: true,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 12,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 12,
+          loop: true,
+        },
+      },
+    });
+
+    /*video-popup*/
+    const thumbNails = document.querySelectorAll(".video-thumbnail");
+    const popupSection = document.getElementsByClassName("popup-section");
+    const popupVideo = document.getElementById("popup-video");
+    const popupInner = document.getElementsByClassName("vieo-popup-inner");
+    const iframe = popupVideo.getElementsByTagName("iframe");
+
+    const popupClose = document.getElementsByClassName("popup-close");
+
+    popupClose[0].addEventListener("click", () => {
+      iframe[0].src = "";
+      popupSection[0].style.display = "none";
+    });
+
+    thumbNails.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        let i = index;
+        popupSection[0].style.display = "flex";
+        iframe[0].src = thumbNails[i].dataset.videolink;
+        iframe[0].style.maxHeight = "500px";
+      });
+    });
+    // video popup ends
+
+    //stats-number-animation
+    $(document).ready(function () {
+      new PureCounter({
+        selector: ".counter1",
+        start: 0,
+        end: 2300,
+        duration: 2,
+        delay: 10,
+      });
+
+      new PureCounter({
+        selector: ".counter2",
+        start: 0,
+        end: 2,
+        duration: 2,
+        delay: 10,
+      });
+
+      new PureCounter({
+        selector: ".counter3",
+        start: 0,
+        end: 290,
+        duration: 2,
+        delay: 10,
+      });
+
+      new PureCounter({
+        selector: ".counter4",
+        start: 0,
+        end: 200,
+        duration: 2,
+        delay: 10,
+      });
+
+      new PureCounter({
+        selector: ".counter5",
+        start: 0,
+        end: 100,
+        duration: 2,
+        delay: 10,
+      });
+
+      new PureCounter({
+        selector: ".counter6",
+        start: 0,
+        end: 200,
+        duration: 2,
+        delay: 10,
+      });
+
+      /*new PureCounter({
+            selector: '.counter7',
+            start: 0,
+            end: 90,
+            duration: 3,
+    });
+
+      new PureCounter({
+            selector: '.counter8',
+            start: 0,
+            end: 400,
+            duration: 3,
+    });
+
+      new PureCounter({
+            selector: '.counter9',
+            start: 0,
+            end: 100,
+            duration: 3,
+    });
+
+      new PureCounter({
+            selector: '.counter10',
+            start: 0,
+            end: 2000,
+            duration: 3,
+    });*/
+    });
+  </script>
+</body>
