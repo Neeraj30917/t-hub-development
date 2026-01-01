@@ -1,0 +1,99 @@
+<head>
+    <style>
+/*swiper-carousel*/
+    .swiper-pagination {
+      position: static !important;
+      margin-top: 50px !important;
+      align-items: center;
+      justify-content: center;
+    }
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+    }
+    .swiper-navigation-icon {
+      display: none;
+    }
+    .swiper-pagination-bullet-active {
+      width: 10px;
+      height: 10px;
+      background-color: #111111;
+    }
+    /*end-swiper-carousel*/
+    h2{
+    font-family: Poppins;
+font-weight: 600;
+font-size: 32px;
+line-height: 40px;
+color: #111111;
+margin: 0;
+margin-bottom: 12px;
+    }
+    
+    p{
+    margin-bottom: 32px;
+ 
+    }
+    
+    @media screen and (max-width: 767px){ 
+    h2 {
+    font-family: Poppins;
+font-weight: 600;
+font-size: 24px;
+line-height: 32px;
+text-align: center;
+    }
+    p{
+    	margin-bottom: 24px;
+      text-align: center;
+    }
+    }
+</style>
+</head>
+
+<body>
+    <script src="https://tools.refokus.com/next-prev-articles/bundle.v1.0.0.js"></script>
+
+<script>
+const shareURL={facebook:"https://www.facebook.com/sharer/sharer.php?u=",twitter:"https://twitter.com/intent/tweet?text=",linkedIn:"https://www.linkedin.com/shareArticle?mini=true&url=",telegram:"https://t.me/share/url?text=&url=",pinterest:"https://pinterest.com/pin/create/button/?url=&media="};function getSharedURL(e){let t="";const n=document.getElementById("blog-title").innerHTML;document.getElementById("featured-image");return t="telegram"===e?"https://t.me/share/url?text="+n+"&url="+encodeURIComponent(document.URL):"pinterest"===e?"https://pinterest.com/pin/create/button/?url="+encodeURIComponent(document.URL)+"&media="+document.getElementById("featured-image").src:shareURL[e]+encodeURIComponent(document.URL),t}document.querySelectorAll(".social-share").forEach((function(e){e.addEventListener("click",(function(t){t.preventDefault();const n=getSharedURL(e.getAttribute("data-social-share")),r=window.screen.width/2-300,o=window.screen.height/2-400;window.open(n,"fbShareWindow",`width=600,height=800,top=${o},left=${r},resizable=yes,scrollbars=yes`)}))}));
+
+ //creating-impact-carousel
+    const swiperSwiper = new Swiper(".swiper", {
+      direction: "horizontal",
+      slidesPerView: 3,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      loop: true,
+      speed: 800,
+      autoPlay: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        300: {
+          slidesPerView: 1.3,
+          spaceBetween: 15,
+          loop: true,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+          loop: false,
+        },
+      },
+    });
+    
+    </script>
+</body>
